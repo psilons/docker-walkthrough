@@ -21,12 +21,6 @@ version = '1.0.0-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = '17'
 
-repositories {
-	//maven { url "https://plugins.gradle.org/m2/" }
-	// gradlePluginPortal()
-	mavenCentral()
-}
-
 dependencies {
 	//classpath("org.springframework.boot:spring-boot-gradle-plugin:")
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -35,6 +29,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+repositories {
+	//maven { url "https://plugins.gradle.org/m2/" }
+	// gradlePluginPortal()
+	mavenCentral()
 }
 
 docker {
