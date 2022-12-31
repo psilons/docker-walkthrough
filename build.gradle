@@ -1,0 +1,47 @@
+//buildscript {
+//	repositories {
+//		mavenCentral()
+//	}
+//}
+
+plugins {
+	id "org.springframework.boot" version "3.0.1"
+	// https://stackoverflow.com/questions/57717042/do-we-need-io-spring-dependency-management-gradle-plugin-when-already-using-id
+	// https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#managing-dependencies.dependency-management-plugin
+	// import, not inherit, from bom, https://reflectoring.io/maven-bom/
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+
+	id "com.palantir.docker" version "0.34.0"
+}
+
+group = 'org.test'
+version = '1.0.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = '17'
+
+repositories {
+	//maven { url "https://plugins.gradle.org/m2/" }
+	// gradlePluginPortal()
+	mavenCentral()
+}
+
+dependencies {
+	//classpath("org.springframework.boot:spring-boot-gradle-plugin:")
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+docker {
+    name "maniekq/${project.name}:${project.version}"
+    dockerfile file('docker/Dockerfile')
+    files 'docker/start_app.sh', "$buildDir/libs/"
+}
+
+
+
