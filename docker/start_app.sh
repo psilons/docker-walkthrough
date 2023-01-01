@@ -1,1 +1,3 @@
-java -jar docker-walkthrough-1.0.0-SNAPSHOT.jar
+#!/bin/sh
+
+java -jar /docker-walkthrough-1.0.0-SNAPSHOT.jar
