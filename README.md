@@ -142,6 +142,7 @@ Docker best practices:
 - https://www.educative.io/blog/docker-compose-tutorial
 - https://www.toutiao.com/article/7167634243265430054/
 - https://www.makeuseof.com/install-docker-compose-on-linux/
+- https://blog.csdn.net/qq_41890624/article/details/128389234
 
 
 ## Local Docker Registry/Repository
@@ -178,3 +179,7 @@ ls -l docker-registry-data/docker/registry/v2/repositories/  # see it in the fol
 ```
 
 https://www.youtube.com/watch?v=O_NMIZJ1qvw
+
+
+[Docker & Kafka](https://blog.csdn.net/yuanchun05/article/details/128423824)
+https://github.com/itmuch/docker-book
